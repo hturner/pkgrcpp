@@ -11,6 +11,26 @@ add_cpp2 <- function(x, y) {
     .Call(`_pkgrcpp_add_cpp2`, x, y)
 }
 
+approx_pi <- function(N) {
+    .Call(`_pkgrcpp_approx_pi`, N)
+}
+
+approx_pi_dq <- function(N) {
+    .Call(`_pkgrcpp_approx_pi_dq`, N)
+}
+
+getEigenValues <- function(M) {
+    .Call(`_pkgrcpp_getEigenValues`, M)
+}
+
+computeGCD <- function(a, b) {
+    .Call(`_pkgrcpp_computeGCD`, a, b)
+}
+
+inner_prod <- function(x, y) {
+    .Call(`_pkgrcpp_inner_prod`, x, y)
+}
+
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
     .Call('_pkgrcpp_RcppExport_registerCCallable', PACKAGE = 'pkgrcpp')

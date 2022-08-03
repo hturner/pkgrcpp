@@ -2,6 +2,7 @@
 // Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #include "../inst/include/pkgrcpp.h"
+#include <RcppArmadillo.h>
 #include <Rcpp.h>
 #include <string>
 #include <set>
@@ -48,6 +49,63 @@ RcppExport SEXP _pkgrcpp_add_cpp2(SEXP xSEXP, SEXP ySEXP) {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// approx_pi
+double approx_pi(const int N);
+RcppExport SEXP _pkgrcpp_approx_pi(SEXP NSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type N(NSEXP);
+    rcpp_result_gen = Rcpp::wrap(approx_pi(N));
+    return rcpp_result_gen;
+END_RCPP
+}
+// approx_pi_dq
+double approx_pi_dq(const int N);
+RcppExport SEXP _pkgrcpp_approx_pi_dq(SEXP NSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const int >::type N(NSEXP);
+    rcpp_result_gen = Rcpp::wrap(approx_pi_dq(N));
+    return rcpp_result_gen;
+END_RCPP
+}
+// getEigenValues
+arma::vec getEigenValues(arma::mat M);
+RcppExport SEXP _pkgrcpp_getEigenValues(SEXP MSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type M(MSEXP);
+    rcpp_result_gen = Rcpp::wrap(getEigenValues(M));
+    return rcpp_result_gen;
+END_RCPP
+}
+// computeGCD
+int computeGCD(int a, int b);
+RcppExport SEXP _pkgrcpp_computeGCD(SEXP aSEXP, SEXP bSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    rcpp_result_gen = Rcpp::wrap(computeGCD(a, b));
+    return rcpp_result_gen;
+END_RCPP
+}
+// inner_prod
+double inner_prod(arma::vec x, arma::vec y);
+RcppExport SEXP _pkgrcpp_inner_prod(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::vec >::type x(xSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(inner_prod(x, y));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 // validate (ensure exported C++ functions exist before calling them)
 static int _pkgrcpp_RcppExport_validate(const char* sig) { 
@@ -67,6 +125,11 @@ RcppExport SEXP _pkgrcpp_RcppExport_registerCCallable() {
 
 static const R_CallMethodDef CallEntries[] = {
     {"_pkgrcpp_add_cpp2", (DL_FUNC) &_pkgrcpp_add_cpp2, 2},
+    {"_pkgrcpp_approx_pi", (DL_FUNC) &_pkgrcpp_approx_pi, 1},
+    {"_pkgrcpp_approx_pi_dq", (DL_FUNC) &_pkgrcpp_approx_pi_dq, 1},
+    {"_pkgrcpp_getEigenValues", (DL_FUNC) &_pkgrcpp_getEigenValues, 1},
+    {"_pkgrcpp_computeGCD", (DL_FUNC) &_pkgrcpp_computeGCD, 2},
+    {"_pkgrcpp_inner_prod", (DL_FUNC) &_pkgrcpp_inner_prod, 2},
     {"_pkgrcpp_RcppExport_registerCCallable", (DL_FUNC) &_pkgrcpp_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };
